@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <style>
+    .container {
+      width: 70%;
+      background-color: #C6EEF7;
+      margin: auto;
+    }
+
+    #circle {
+      width: 65%;
+      background-color: #2A91A8;
+      border-bottom: 2px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    #triangle {
+      width: 65%;
+      background-color: #2A91A8;
+      border-bottom: 2px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    #square {
+      width: 65%;
+      background-color: #2A91A8;
+      border-bottom: 2px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    #rectangle {
+      width: 65%;
+      background-color: #2A91A8;
+      border-bottom: 2px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .container,
+    section {
+      border: 2px solid darkblue;
+      padding: 5px;
+    }
+
+    .go {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 id="top">Basic Geometry</h1>
+    <p>In this section, we are going to find the Area of some two-dimension shapes</p>
+    <p> You can click on any shape below:</p>
+    <ul>
+      <li><a href="#circle">Circle</a></li>
+      <li><a href="#triangle">Triangle</a></li>
+      <li><a href="#square">Sqaure</a></li>
+      <li><a href="#rectangle">Reactangle</a></li>
+
+
+    </ul>
+    <section id="circle">
+      <h2>Circle Area</h2>
+      <div>
+        <label for="radius"> Enter the value of the circle's radius:</label>
+        <input type="text" id="radius">
+      </div>
+      <div>
+        <label for="circle_area">Result:</label>
+        <input type="text" id="circle-area" readonly>
+      </div>
+      <div class="btn">
+        <Button onclick="calculateArea(1)">Calculate</Button>
+      </div>
+      <div class="go">
+        <a href="#top">Go to top</a>
+      </div>
+    </section>
+
+
+    <section id="triangle">
+      <h2>Triangle Area</h2>
+      <div>
+        <label for="base"> Enter the value of the triangle's base:</label>
+        <input type="text" id="base">
+      </div>
+      <div>
+        <label for="height"> Enter the value of the triangle's height:</label>
+        <input type="text" id="height">
+      </div>
+
+      <div>
+        <label for="trinagle_area">Result:</label>
+        <input type="text" id="triangle-area" readonly>
+      </div>
+      <div class="btn">
+        <Button onclick="calculateArea(2)">Calculate</Button>
+      </div>
+      <div class="go">
+        <a href="#top">Go to top</a>
+      </div>
+    </section>
+
+
+    <section id="square">
+      <h2>Square Area</h2>
+      <div>
+        <label for="side"> Enter the value of the square's side:</label>
+        <input type="text" id="side">
+      </div>
+      <div>
+        <label for="square_area">Result:</label>
+        <input type="text" id="square-area" readonly>
+      </div>
+      <div class="btn">
+        <Button onclick="calculateArea(3)">Calculate</Button>
+      </div>
+      <div class="go">
+        <a href="#top">Go to top</a>
+      </div>
+    </section>
+
+
+    <section id="rectangle">
+      <h2> Rectangle Area</h2>
+      <div>
+        <label for="length"> Enter the value of the recatngle' length:</label>
+        <input type="text" id="lenght">
+      </div>
+      <div>
+        <label for="breadth"> Enter the value of the recatngle' breadth:</label>
+        <input type="text" id="breadth">
+      </div>
+
+      <div>
+        <label for="rectangle_area">Result:</label>
+        <input type="text" id="rectangle-area" readonly>
+      </div>
+      <div class="btn">
+        <Button onclick="calculateArea(4)">Calculate</Button>
+      </div>
+      <div class="go">
+        <a href="#top">Go to top</a>
+      </div>
+    </section>
+
+    <script>
+      function calculateArea(id) {
+        if (id == 1) {
+          circleArea();
+        } else if (id == 2) {
+          triangleArea();
+        } else if (id == 3) {
+          squareArea();
+        } else {
+          rectangleArea();
+        }
+      }
+
+      function circleArea() {
+        let radius = parseFloat(document.getElementById('radius').value.trim());
+        let area = Math.PI * radius * radius;
+        let result = document.getElementById('circle-area');
+        result.value = area.toString();
+      }
+
+      function triangleArea() {
+        let base = parseFloat(document.getElementById('base').value.trim());
+        let height = parseFloat(document.getElementById('height').value.trim());
+        let area = 0.5 * height * base;
+        let result = document.getElementById('triangle-area');
+        result.value = area.toString();
+      }
+
+      function squareArea() {
+        let side = parseFloat(document.getElementById('side').value.trim());
+        let area = side * side;
+        let result = document.getElementById('square-area');
+        result.value = area.toString();
+      }
+
+      function rectangleArea() {
+        let length = parseFloat(document.getElementById('length').value.trim());
+        let breadth = parseFloat(document.getElementById('breadth').value.trim());
+        let area = length * breadth;
+        let result = document.getElementById('rectangle-area');
+        result.value = area.toString();
+      }
+
+    </script>
+
+    <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+    <script src="https://replit.com/public/js/replit-badge-v2.js" theme="dark" position="bottom-right"></script>
+  </div>
+</body>
+
+</html>
